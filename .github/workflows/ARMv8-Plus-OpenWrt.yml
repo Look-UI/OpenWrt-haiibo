@@ -1,6 +1,6 @@
 name: ARMv8 Plus OpenWrt
 
-on:
+于:
   workflow_dispatch:
   schedule:
     - cron: 0 20 * * *
@@ -187,7 +187,7 @@ jobs:
         name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
         allowUpdates: true
         tag: ${{ env.FIRMWARE_TAG }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GI_TOKEN }}
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is Temporary Firmware for Armvirt 64**
@@ -268,8 +268,8 @@ jobs:
         name: R${{ env.DATE }} for ${{ env.OPENWRT_TAG }}
         allowUpdates: true
         removeArtifacts: true
-        tag: ${{ env.OPENWRT_TAG }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+        标签: ${{ env.OPENWRT_TAG }}
+        token: ${{ secrets.GI_TOKEN }}
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         body: |
           **This is OpenWrt Firmware for Armvirt 64**
